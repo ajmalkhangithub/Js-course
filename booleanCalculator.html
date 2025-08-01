@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolean Calculator</title>
+</head>
+<body>
+    
+    <input type="text" id="display" readonly style="width: 200px; height: 30px; font-size: 20px;">
+    <br><br>
+    <button onclick="appendBoolean('true')">True</button>
+    <button onclick="appendBoolean('false')">False</button>
+    <button onclick="appendOperator('&&')">&&</button><br><br>
+    <button onclick="appendOperator('||')">||</button>
+    <button onclick="appendOperator('!')">!</button>
+    <button onclick="calculate()">=</button>
+    <button onclick="Reset()">C</button>
+    <script>
+        let display =document.getElementById('display')
+
+        function appendBoolean(value){
+            display.value += value;
+        }
+        function appendOperator(operator){
+            display.value += operator;
+        }
+        function calculate(){
+            try{
+                display.value = eval(display.value)
+            }
+            catch(err){
+                display.value = "Error";
+            }
+        }
+        function Reset(){
+            display.value ="";
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+    <script>
+        //game logic can be added here
+        alert('welcome to the game!')
+        let playerName = prompt('Enter your name:');
+        if (playerName) {
+            alert(`Hello, ${playerName}! Let's start the game.`);
+            playGame()
+        } else {
+            alert('No name entered. Starting the game without a name.');
+        }
+       
+        // game logic
+        let score =0;
+        function playGame(){
+            let answer = prompt('What is 2+2 ')
+            if (answer == '4'){
+                alert('Correct answer!')
+                score +=10
+
+            }
+            else{
+                alert('Wrong number')
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>
