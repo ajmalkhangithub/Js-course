@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object in JavaScript</title>
+</head>
+<body>
+    <script>
+        // let create a object of person
+        let person={
+            name:"Ajmal Khan",
+            age:21,
+            gender:"Male",
+            hobbies:["reading","coding",'Sports'],
+            greet:function(){
+                console.log("Hello, my name is "+ this.name +"I am "+ this.age + "years old")
+            }
+        }
+
+        console.log(localStorage.getItem("msg"))
+        // person.name="Tabish"
+        // person.other=12
+        // console.log(person.name)
+        // console.log(person.age)
+        // delete person.gender
+        // console.log(typeof person)
+        // console.log(person.hobbies[0])
+        // console.log(person.greet())
+        // console.log(JSON.stringify(person))
+        // const personString= JSON.stringify(person)
+        // console.log(personString)
+
+        localStorage.setItem("msg","Hello world")
+    </script>
+</body>
+</html>
