@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo List</title>
+</head>
+<body>
+
+  <input type="text" class="display" placeholder="Add name" />
+  <input type="text" placeholder="enter your gender" class="gender">
+  <input type="date" class="due-date-input">
+  <button onclick="additem()">Add</button>
+
+  <div class="show"></div>
+
+  <script>
+    const list = [
+      {
+        name: "Ajmal",
+        sex:"male",
+        duedate: "2025-02-03",
+      },
+      {
+        name: "Khan",
+        sex:"male",
+        duedate: "2025-02-10"
+      }
+    ];
+
+    function additemm() {
+      let todohtml = "";
+
+      for (let i = 0; i < list.length; i++) {
+        const { name,sex, duedate } = list[i];
+
+        const html = `
+          <p>
+            ${name} — ${sex} - ${duedate}
+            <button onclick="deleteItem(${i})">Delete</button>
+          </p>
+        `;
+        todohtml += html;
+      }
+
+      document.querySelector(".show").innerHTML = todohtml;
+    }
+
+    function deleteItem(index) {
+      list.splice(index, 1);
+      additemm();
+    }
+
+    function additem() {
+      const inputElem = document.querySelector('.display');
+      const dueDateElem = document.querySelector('.due-date-input');
+      const genderinpu=document.querySelector(".gender")
+      const sex=genderinpu.value
+      const name = inputElem.value.trim();
+      const duedate = dueDateElem.value;
+
+      if (name !== "" && duedate !== "") {
+        list.push({ name, sex,duedate });
+
+        inputElem.value = "";
+        genderinpu.value="";
+        dueDateElem.value = "";
+
+        additemm();
+      }
+    }
+
+    // Initial render
+    additemm();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            background-color: black;
+            color: white;
+            padding-bottom: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            border-radius: 50px;
+            text-align: center;
+            border: none;
+        }
+        button:hover{
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- <p>order under $40</p>
+    <p>order above $50</p>
+
+    <input type="text" id="display" >
+<button onclick="calculate()">cal</button>
+<p id="show"></p> -->
+<input type="text" id="display" placeholder="Enter your name:">
+<button onclick="onSubmit()">Submit</button>
+<p id="show"></p>
+    <script>
+
+        function onSubmit(){
+
+            let display=document.getElementById("display").value
+            let show=document.getElementById("show").innerText=`Your name is: ${display}`
+            display=""
+        }
+
+
+        // function calculate(){
+             
+        //     let display=document.getElementById("display")
+        //     console.log(display.value)
+        //     let cost=parseInt(display.value)
+        //     if(cost<=40){
+        //        cost=`${cost+10}`
+        //     }
+        //     let show=document.getElementById("show").innerText=cost
+        // }
+        // let show=document.getElementById("show").innerHTML=calculate()
+        // if(display.value<=40 ){
+        //    console.log(display.value=display.value+10) 
+        // }
+        // else{
+        //     display.value=display.value
+        // }
+        // function calculate(){
+        //     display.value=eval(display.value)
+
+        // }
+      
+    </script>
+</body>
+</html>
